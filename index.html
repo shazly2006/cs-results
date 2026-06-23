@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HNU Results Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOGIN PAGE ============ -->
+<section id="loginPage" class="page login-page">
+  <div class="login-card">
+    <div class="login-logo">HNU</div>
+    <h1 class="login-title">HNU Results</h1>
+    <p class="login-subtitle">Helwan National University</p>
+
+    <form id="loginForm" class="login-form" autocomplete="off">
+      <div class="field">
+        <label for="username">Username</label>
+        <div class="input-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12Zm0 2.4c-3.6 0-9 1.8-9 5.4v1.8h18v-1.8c0-3.6-5.4-5.4-9-5.4Z" fill="currentColor"/></svg>
+          <input type="text" id="username" name="username" placeholder="Enter your ID" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 1 1 12 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1Zm2 0h8V8a4 4 0 1 0-8 0v2Z" fill="currentColor"/></svg>
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+          <button type="button" class="toggle-pass" id="togglePass" aria-label="Show password">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5c-5.4 0-9.3 3.7-10.7 6.6a1.6 1.6 0 0 0 0 1.4C2.7 15.9 6.6 19.6 12 19.6s9.3-3.7 10.7-6.6a1.6 1.6 0 0 0 0-1.4C21.3 8.7 17.4 5 12 5Zm0 11.4a4.4 4.4 0 1 1 0-8.8 4.4 4.4 0 0 1 0 8.8Z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <label class="remember-row">
+        <input type="checkbox" id="rememberMe">
+        <span>Remember me for 30 days</span>
+      </label>
+
+      <p id="loginError" class="login-error" hidden>Invalid Username or Password</p>
+
+      <button type="submit" class="btn-signin">Sign In</button>
+    </form>
+
+    <div class="login-footer">
+      <hr>
+      <p class="footer-uni">Helwan National University</p>
+      <p class="footer-sub">Student Information System</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD PAGE ============ -->
+<section id="dashboardPage" class="page dashboard-page" hidden>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand-mark">HNU</div>
+      <div class="brand-text">
+        <span class="brand-title">HNU Portal</span>
+        <span class="brand-sub">Student Portal</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button class="icon-btn" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22a2.2 2.2 0 0 0 2.2-2.2h-4.4A2.2 2.2 0 0 0 12 22Zm7-5.4V11c0-3.2-1.7-5.9-4.8-6.6V3.7a1.2 1.2 0 1 0-2.4 0v.7C8.7 5.1 7 7.7 7 11v5.6L5 18.6V20h14v-1.4l-2-2Z" fill="currentColor"/></svg>
+        <span class="notif-dot"></span>
+      </button>
+      <div class="id-chip">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12.5h6m-6 4h4M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span id="chipId">931240309</span>
+      </div>
+      <button class="user-pill" id="userMenuBtn">
+        <span class="avatar">مح</span>
+        <span class="user-name" id="userFullName">محمد سيد محمود محمد</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="user-menu" id="userMenu" hidden>
+        <button id="logoutBtn" class="logout-item">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dash-headline">
+      <div>
+        <h1 class="dash-title">Dashboard</h1>
+        <p class="dash-sub">Final Grades</p>
+      </div>
+      <div class="actions-row">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input type="text" id="subjectSearch" placeholder="Search subject...">
+        </div>
+        <button class="btn-ghost" id="printBtn">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M6 14h12v7H6v-7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Print
+        </button>
+        <button class="btn-ghost" id="pdfBtn">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download PDF
+        </button>
+      </div>
+    </div>
+
+    <section class="term-card">
+      <div class="term-card-top">
+        <div class="term-tag">
+          <span class="term-name">SPRING</span>
+          <span class="term-year">2026</span>
+          <span class="badge-posted">Posted</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="summary-row">
+      <div class="summary-card">
+        <span class="summary-label">Total Subjects</span>
+        <span class="summary-value" id="totalSubjects">6</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">Total Credit Hours</span>
+        <span class="summary-value" id="totalCredits">18</span>
+      </div>
+    </div>
+
+    <section class="table-card">
+      <div class="table-scroll">
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Credit Hours</th>
+              <th>Marks</th>
+              <th>Points</th>
+              <th>Grade</th>
+              <th>Comment</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody">
+            <!-- rows injected by script.js -->
+          </tbody>
+        </table>
+      </div>
+      <p id="noResults" class="no-results" hidden>No subjects match your search.</p>
+    </section>
+  </main>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
